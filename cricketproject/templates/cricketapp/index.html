@@ -1,0 +1,30 @@
+<<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Teams page</title>
+  </head>
+  <body>
+    <h1>Teams table:</h1>
+    {% if team_list %}
+    <table border='1'>
+      <thead>
+        <th>Team Name</th>
+        <th>Team State</th>
+        <th>Team Logo</th>
+      </thead>
+      {% for t in team_list%}
+      <tr>
+      <td>{{t.team_name}}</td>
+      <td>{{t.state}}</td>
+      <td>{{t.team_logo}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {%else%}
+    <h1>NO records found</h1>
+    {% endif %}
+
+  </body>
+</html>
